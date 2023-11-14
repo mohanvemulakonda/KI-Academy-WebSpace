@@ -2,27 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>e.GO Mobile - Experience the Future</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>e.GO Mobile - Drive the Change!</title>
+    <link rel="icon" type="image/x-icon" href="/Landing page proj/images/eGO_Logo_RGB_1c.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Barlow', sans-serif;
             margin: 0;
             padding: 0;
             color: #000000;
+            padding-right: 10px;
+            padding-left: 10px;
+        
         }
-        .header, .footer {
-            background-color: #1d1d1b;
-            color: #ffffff;
+         .footer {
+            background-color: #ffffff;
+            color: #1d1d1b;
             text-align: center;
-            padding: 15px 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
-        .hero-image {
-            background-image: url('hero-image.jpg'); /* Replace with actual hero image URL */
+       
+    }
+    .hero-image {
+            position: relative;
+            text-align: center;
+            color: white;
+            /* Add your hero image here */
+            background-image: url('/Landing\ page\ proj/#future-mobility');
             background-size: cover;
+            height: 200px; /* Adjust the height as needed */
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            transform: translate(-50%, -50%);
             color: #ffffff;
-            text-align: center;
-            padding: 50px 20px;
+            font-size: 18px;
         }
         .two-column, .three-column {
             display: flex;
@@ -49,70 +69,268 @@
             display: inline-block;
             margin-top: 10px;
         }
+        .hovering-cta-menu {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        .cta-icon {
+            /* Style for your icons */
+        }
+        .cta-content {
+            display: none;
+            /* Additional styles for CTA content */
+        }
         @media screen and (max-width: 600px) {
             .column, .benefit {
                 flex-basis: 100%;
             }
         }
-.hovering-cta-menu {
-    position: fixed;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-.cta-icon {
-    /* Style for your icons */
-}
-.cta-content {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1d1d1b; /* Adjust the background color as needed */
+            height: 35px;
+        }
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu a {
+            color: white; /* Adjust text color as needed */
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu a {
+            color: white; /* Adjust text color as needed */
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .dropdown-content {
     display: none;
-    /* Additional styles for CTA content */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
+.dropdown-content li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.nav-menu li {
+    padding: 10px;
+    position: relative;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+.fabs {
+  position: fixed;
+  bottom: 50%;
+  right: 1%;
+  opacity: 80%;
+
+  
+}
+
+.action {
+  background: #1d1d1b;
+  height: 250px;
+  width: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 7px 0px gray;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.action i {
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.action:hover {
+  background-color: #1d1d1b;
+  width: 200px;
+}
+
+.btn {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  
+}
+
+.btn i {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, 50%);
+  z-index: 1;
+}
+
+.btns {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 5px;
+  height: 35px;
+  width: 35px;
+  transition: 0.3s ease-in-out;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.btns.open {
+  bottom: 50px;
+}
     </style>
 </head>
 <body>
+    
     <div class="header">
-<div class="hovering-cta-menu">
-    <div class="cta-icon" onmouseover="toggleCTAMenu(true)" onmouseout="toggleCTAMenu(false)">
-        <!-- Add icons here -->
-    </div>
-    <div class="cta-content" id="ctaContent">
-        <!-- Add your CTA content here -->
-    </div>
-</div>
-
-        <img src="C:/Users/vemulakonda/Downloads/eGO_Logo_RGB_1c.svg" alt="e.GO Mobile Logo" /> <!-- Replace with actual logo URL -->
+        <img src="/Landing page proj/images/eGO_Logo_RGB_white_L.png" alt="e.GO Mobile Logo" width="80px"/>
+        <ul class="nav-menu">
+            <a href="#company">Company</a>
+            <ul class="dropdown-content">
+                <li><a href="#service1">Service 1</a></li>
+                <li><a href="#service2">Service 2</a></li>
+                <li><a href="#service3">Service 3</a></li>
+                <!-- More dropdown items -->
+            </ul>
+            <a href="#future-mobility">Future Mobility</a>
+            <a href="#service">Service</a>
+            <a href="#offers">Offers</a>
+        </ul>
     </div>
     <div class="hero-image">
-        <h1>Driving Sustainability Forward</h1>
+        <img src="/Landing page proj/images/31191e.wave X (51).jpg" alt="hero-image" style="width: 100%;">
+        <div class="hero-text">
+            <h1>Drive into the Future with e.wave X &nbsp;<a href="explore.html" class="cta-button" style="background-color: #ffffff; color: #000000; font-size: 25px; border-radius: 15px;"><span> &gt </span></a></h1>
+            
+        </div>
+        </div>
+    <div>
+        <h2 style="padding-left: 100px; padding-right: 100px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr
+        </h2>
     </div>
+    
     <div class="two-column">
         <div class="column">
             <h2>Explore the e.wave X</h2>
             <p>Discover the features and design of our latest model.</p>
-            <a href="explore.html" class="cta-button">Explore Now</a>
+            <img src="/Landing page proj/images/21441e_Wave_Interior_Final_Display_2.jpg" alt="exlore" style="width: 400px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr.</p>
+         <div><a href="explore.html" class="cta-button">Explore Now</a></div>       
         </div>
         <div class="column">
             <h2>Configure Your e.GO</h2>
             <p>Customize your e.GO vehicle to suit your style.</p>
-            <a href="configure.html" class="cta-button">Configure Now</a>
+            <img src="/Landing page proj/images/21441e_Wave_Interior_Final_Display_2.jpg" alt="exlore" style="width: 400px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr.</p>
+            <div><a href="configure.html" class="cta-button">Configure Now</a></div>
         </div>
     </div>
     <div class="three-column">
         <!-- Insert benefits and CTAs here -->
-        <div class="benefit">Benefit 1</div>
-        <div class="benefit">Benefit 2</div>
-        <div class="benefit">Benefit 3</div>
+        <div class="benefit">KSP <img src="/Landing page proj/images/21441e_Wave_Interior_Final_Display_2.jpg" alt="exlore" style="width: 350px;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr.</p></div>
+        <div class="benefit">KSP <img src="/Landing page proj/images/21441e_Wave_Interior_Final_Display_2.jpg" alt="exlore" style="width: 350px;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr.</p></div>
+        <div class="benefit">KSP<img src="/Landing page proj/images/21441e_Wave_Interior_Final_Display_2.jpg" alt="exlore" style="width: 350px;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr.</p></div>
     </div>
     <div class="footer">
+        <div>
+        &copy Next e.GO Mobile SE 2023
+        </div>
         <!-- Insert quick links and social media links here -->
+        <div>
+        <ul class="nav-menu1">
+            <a href="#company" style="padding: 10px;">Company</a>
+            <a href="#future-mobility"style="padding: 10px;">Future Mobility</a>
+            <a href="#service"style="padding: 10px;">Service</a>
+            <a href=""style="padding: 10px;">Offers</a>
+        </ul>
     </div>
-<script>
-    function toggleCTAMenu(show) {
-        document.getElementById('ctaContent').style.display = show ? 'block' : 'none';
-    }
-</script>
-
+    </div>
+    <div class="hovering-cta-menu">
+        <div class="cta-icon" onmouseover="toggleCTAMenu(true)" onmouseout="toggleCTAMenu(false)">
+            <!-- Add icons here -->
+        </div>
+        <div class="cta-content" id="ctaContent">
+            <!-- Add your CTA content here -->
+        </div>
+    </div>
+    <div class="fabs" onclick="toggleBtn()">
+        <div class="action">
+          <i class="fas fa-plus" id="add"></i>
+          <i class="fas fa-times" id="remove" style="display: none"></i>
+        </div>
+  
+        <div class="btns">
+          <a href="#" class="btn" style="background: #ffffff;" 
+            > <img src="/Landing page proj/images/eGO_Logo_RGB_1c.svg" style="width: 40px; margin-top: 10px;"><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="btn" style="background: #ffffff"
+            ><img src="/Landing page proj/images/eGO_Logo_RGB_1c.svg" style="width: 40px; margin-top: 10px;"><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="btn" style="background: #ffffff"
+            ><img src="/Landing page proj/images/eGO_Logo_RGB_1c.svg" style="width: 40px; margin-top: 10px;"><i class="fab fa-whatsapp"></i
+          ></a>
+          <a href="#" class="btn" style="background:#ffffff;" 
+            ><img src="/Landing page proj/images/eGO_Logo_RGB_1c.svg" style="width: 40px; margin-top: 10px;"><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    
 </body>
+<script>
+    function toggleBtn() {
+      const Btns = document.querySelector(".btns");
+      const add = document.getElementById("add");
+      const remove = document.getElementById("remove");
+      const btn = document.querySelector(".btns").querySelectorAll("a");
+      Btns.classList.toggle("open");
+      if (Btns.classList.contains("open")) {
+        remove.style.display = "block";
+        add.style.display = "none";
+        btn.forEach((e, i) => {
+          setTimeout(() => {
+            bottom = 40 * i;
+            e.style.bottom = bottom + "px";
+            console.log(e);
+          }, 100 * i);
+        });
+      } else {
+        add.style.display = "block";
+        remove.style.display = "none";
+        btn.forEach((e, i) => {
+          e.style.bottom = "0px";
+        });
+      }
+    }
+  </script>
+  
 </html>
